@@ -39,7 +39,7 @@
         <!-- Welcome Header -->
         <div class="dashboard-header text-center mb-4">
             <h1 class="display-5 fw-bold">Welcome back, <span id="athleteNameHeader">Athlete</span>!</h1>
-            <p class="lead">Track your progress and manage your funding journey</p>
+            <p class="lead">Track your progress and connect with investors</p>
         </div>
 
         <!-- Quick Stats -->
@@ -82,10 +82,12 @@
             </div>
         </div>
 
-        <!-- Funding Progress -->
-        <div class="row mb-4">
-            <div class="col-lg-8">
-                <div class="athlete-profile-card">
+        <!-- Main Content Row -->
+        <div class="row">
+            <!-- Left Column - Progress and Activity -->
+            <div class="col-lg-6">
+                <!-- Funding Progress -->
+                <div class="athlete-profile-card mb-4">
                     <h4 class="mb-3">Funding Progress</h4>
                     <div class="progress mb-3" style="height: 20px;">
                         <div class="progress-bar" role="progressbar" style="width: 0%" id="fundingProgress"></div>
@@ -95,9 +97,9 @@
                         <span>$<span id="goalAmount">0</span> goal</span>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="athlete-profile-card">
+
+                <!-- Quick Actions -->
+                <div class="athlete-profile-card mb-4">
                     <h5 class="mb-3">Quick Actions</h5>
                     <div class="d-grid gap-2">
                         <a href="athlete-profile.html" class="btn btn-primary btn-sm">
@@ -109,14 +111,13 @@
                         <button class="btn btn-info btn-sm" onclick="updateStats()">
                             <i class="fas fa-chart-line me-2"></i>Update Stats
                         </button>
+                        <button class="btn btn-warning btn-sm" onclick="window.refreshData()" style="font-size: 0.75rem;">
+                            <i class="fas fa-refresh me-2"></i>Refresh Data
+                        </button>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Recent Activity -->
-        <div class="row">
-            <div class="col-lg-8">
+                <!-- Recent Activity -->
                 <div class="athlete-profile-card">
                     <h4 class="mb-3">Recent Activity</h4>
                     <div id="recentActivity">
@@ -124,15 +125,58 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+
+            <!-- Right Column - Investors and Messages -->
+            <div class="col-lg-6">
+                <!-- Potential Investors - Now with more space -->
+                <div class="athlete-profile-card mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5><i class="fas fa-handshake text-success me-2"></i>Potential Investors</h5>
+                        <button class="btn btn-outline-primary btn-sm" onclick="loadPotentialInvestors()">
+                            <i class="fas fa-refresh"></i>
+                        </button>
+                    </div>
+                    <div id="potentialInvestors" style="max-height: 600px; overflow-y: auto;">
+                        <!-- Investors will be loaded here -->
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-outline-success btn-sm" onclick="viewAllInvestors()">
+                            <i class="fas fa-users me-2"></i>View All Investors
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Messages -->
                 <div class="athlete-profile-card">
-                    <h5 class="mb-3">Messages</h5>
+                    <h5 class="mb-3">Recent Messages</h5>
                     <div id="recentMessages">
                         <!-- Messages will be loaded here -->
                     </div>
                     <div class="text-center mt-3">
                         <a href="messages.html" class="btn btn-outline-primary btn-sm">View All Messages</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- All Investors Modal -->
+    <div class="modal fade" id="allInvestorsModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-users me-2"></i>All Available Investors
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="allInvestorsList">
+                        <!-- All investors will be loaded here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

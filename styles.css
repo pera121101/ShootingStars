@@ -656,3 +656,160 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--secondary-color);
 }
+
+/* Investor cards for athletes */
+.potential-investor {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.potential-investor:hover {
+    background: #f8f9fa !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.investment-range, .sport-focus {
+    margin-bottom: 0.5rem;
+}
+
+.investor-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+/* Modal improvements */
+.modal-lg {
+    max-width: 900px;
+}
+
+.profile-avatar {
+    background: var(--gradient-primary);
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Scrollable container for investors */
+.athlete-profile-card:has(#potentialInvestors) {
+    position: relative;
+}
+
+#potentialInvestors::-webkit-scrollbar {
+    width: 6px;
+}
+
+#potentialInvestors::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#potentialInvestors::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+#potentialInvestors::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Improved styles for potential investors */
+.potential-investor {
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 12px !important;
+    background: white;
+}
+
+.potential-investor:hover {
+    background: #f8f9fa !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.investor-stats {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.investment-range, .sport-focus {
+    margin-bottom: 0.5rem;
+}
+
+.investor-avatar .profile-avatar {
+    background: var(--gradient-primary) !important;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Scrollable container improvements */
+#potentialInvestors {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) #f1f1f1;
+}
+
+#potentialInvestors::-webkit-scrollbar {
+    width: 6px;
+}
+
+#potentialInvestors::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#potentialInvestors::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+#potentialInvestors::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Modal improvements */
+.modal-xl {
+    max-width: 1200px;
+}
+
+.card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+/* Better spacing for dashboard */
+.col-lg-6 .athlete-profile-card {
+    min-height: auto;
+}
+
+/* Icon improvements */
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: white;
+}
