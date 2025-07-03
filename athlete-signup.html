@@ -5,55 +5,200 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Athlete Signup - ShootingStars</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-star text-warning me-2"></i>ShootingStars
+            </a>
+            <a href="index.html" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i>Back to Home
+            </a>
+        </div>
+    </nav>
+
     <div class="container py-5">
-        <h1 class="text-center mb-4">Athlete Signup</h1>
-        <form id="athleteForm" class="col-md-6 mx-auto">
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" required>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2><i class="fas fa-running text-primary me-2"></i>Join as Athlete</h2>
+                        <p>Start your journey to professional sports with funding from investors who believe in you</p>
+                    </div>
+
+                    <form id="athleteForm" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                    <div class="invalid-feedback">Please provide your first name.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                    <div class="invalid-feedback">Please provide your last name.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">Please provide a valid email address.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" minlength="8" required>
+                            <div class="invalid-feedback">Password must be at least 8 characters long.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                            <div class="invalid-feedback">Passwords do not match.</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="role" class="form-label">I am a...</label>
+                                    <select class="form-select" id="role" required>
+                                        <option value="">Select your role</option>
+                                        <option value="athlete">Athlete</option>
+                                        <option value="agency">Agency representing athletes</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select your role.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sport" class="form-label">Primary Sport</label>
+                                    <select class="form-select" id="sport" required>
+                                        <option value="">Select your sport</option>
+                                        <option value="football">Football</option>
+                                        <option value="baseball">Baseball</option>
+                                        <option value="martial_arts">Martial Arts</option>
+                                        <option value="basketball">Basketball</option>
+                                        <option value="soccer">Soccer</option>
+                                        <option value="tennis">Tennis</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select your sport.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="age" class="form-label">Age</label>
+                                    <input type="number" class="form-control" id="age" min="13" max="25" required>
+                                    <div class="invalid-feedback">Age must be between 13 and 25.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="location" class="form-label">Location (City, State)</label>
+                                    <input type="text" class="form-control" id="location" required>
+                                    <div class="invalid-feedback">Please provide your location.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bio" class="form-label">Tell us about yourself (100 words max)</label>
+                            <textarea class="form-control" id="bio" rows="4" maxlength="600" placeholder="Started playing [sport] at [age], led team to [achievement]..."></textarea>
+                            <div class="form-text">Share your story, achievements, and what makes you special.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="achievements" class="form-label">Key Achievements & Stats</label>
+                            <textarea class="form-control" id="achievements" rows="3" placeholder="e.g., 1,200 passing yards in 2024 season, State Championship winner, 0.90 ERA..."></textarea>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="socialFollowers" class="form-label">Social Media Followers</label>
+                                    <input type="number" class="form-control" id="socialFollowers" min="0" placeholder="e.g., 5000">
+                                    <div class="form-text">Total followers across all platforms</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="socialLinks" class="form-label">Social Media Links</label>
+                                    <input type="url" class="form-control" id="socialLinks" placeholder="https://twitter.com/yourhandle">
+                                    <div class="form-text">Your main social media profile</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="videoHighlights" class="form-label">Video Highlights</label>
+                            <input type="url" class="form-control" id="videoHighlights" placeholder="https://youtube.com/your-highlights">
+                            <div class="form-text">Link to your game footage or highlight reel</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fundingGoal" class="form-label">Funding Goal ($)</label>
+                            <input type="number" class="form-control" id="fundingGoal" min="1000" max="100000" placeholder="25000">
+                            <div class="form-text">How much funding are you seeking? ($1,000 - $100,000)</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fundingPurpose" class="form-label">What will you use the funding for?</label>
+                            <textarea class="form-control" id="fundingPurpose" rows="3" placeholder="Training camp, equipment, travel expenses, coaching..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="kyc" class="form-label">Identity Verification</label>
+                            <input type="file" class="form-control" id="kyc" accept=".jpg,.jpeg,.png,.pdf">
+                            <div class="form-text">Upload a photo of your ID or passport for verification</div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                <label class="form-check-label" for="agreeTerms">
+                                    I agree to the <a href="terms.html" class="text-primary">Terms of Service</a> and <a href="privacy.html" class="text-primary">Privacy Policy</a>
+                                </label>
+                                <div class="invalid-feedback">You must agree to the terms and conditions.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="agreeAge">
+                                <label class="form-check-label" for="agreeAge">
+                                    I confirm that I am at least 13 years old
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-3">
+                            <i class="fas fa-user-plus me-2"></i>Create My Athlete Profile
+                        </button>
+                    </form>
+
+                    <div class="text-center mt-4">
+                        <p class="text-muted">Already have an account? <a href="login.html" class="text-primary">Sign in here</a></p>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" required>
-            </div>
-            <div class="mb-3">
-                <label for="role" class="form-label">Role</label>
-                <select class="form-select" id="role" required>
-                    <option value="athlete">Athlete</option>
-                    <option value="agency">Agency</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="sport" class="form-label">Sport</label>
-                <select class="form-select" id="sport" required>
-                    <option value="football">Football</option>
-                    <option value="baseball">Baseball</option>
-                    <option value="martial_arts">Martial Arts</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="age" class="form-label">Age</label>
-                <input type="number" class="form-control" id="age" min="13" max="22" required>
-            </div>
-            <div class="mb-3">
-                <label for="location" class="form-label">Location</label>
-                <input type="text" class="form-control" id="location" required>
-            </div>
-            <div class="mb-3">
-                <label for="kyc" class="form-label">KYC Verification (Upload ID)</label>
-                <input type="file" class="form-control" id="kyc">
-            </div>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
-        </form>
+        </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="database.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
