@@ -1,0 +1,16 @@
+/* Hero section styling */
+.hero {
+    background: url('https://images.unsplash.com/photo-1517649763966-7c8e5c12e374') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+}
+.hero h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
